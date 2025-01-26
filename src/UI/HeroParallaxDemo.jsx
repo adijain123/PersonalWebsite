@@ -46,7 +46,7 @@ export const products = [
 
   {
     title: "hacker-news-service",
-    link: "https://algochurn.com",
+    link: "https://github.com/adijain123/hacker-news-service",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
   },
@@ -58,9 +58,9 @@ export const products = [
   },
   {
     title: "E-mail scraper",
-    link: "https://tailwindmasterkit.com",
+    link: "https://github.com/adijain123/Leads_email_scraper",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+      "./email.png",
   },
   {
     title: "SmartBridge",
