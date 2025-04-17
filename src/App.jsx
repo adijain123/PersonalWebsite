@@ -7,7 +7,8 @@ import Education from "./Education";
 import { TextHoverEffect } from "./UI/ui/text-hover-effect";
 import { ExperienceSection } from "./Experience";
 import { Footer } from "./Footer";
-import {ProjectsSection} from './Projects'
+import { ProjectsSection } from "./Projects";
+import Contact from "./Contact";
 
 export default function App() {
   return (
@@ -19,22 +20,26 @@ export default function App() {
       <div className="pt-32" id="works">
         <HeroParallaxDemo />
       </div>
-        <div className="pt-32" id="tech-skills">
-          <BackgroundGradientDemo />
-        </div>
-        <div className="pt-32" id="education">
-          <Education />
-        </div>
-        <div className="pt-32" id="experience">
-        <ExperienceSection/>
-        </div>
-        <div className="h-[40rem] flex items-center justify-center">
-      <TextHoverEffect text="ADI" />
-    </div>
-    <div className="pt-32" id="projects">
-     <ProjectsSection/>
-     </div>
-    <Footer/>
+      <div className="pt-32" id="tech-skills">
+        <BackgroundGradientDemo />
       </div>
+      <div className="pt-32" id="education">
+        <Education />
+      </div>
+      <div className="pt-32" id="experience">
+        <ExperienceSection />
+      </div>
+      <div className="h-[40rem] flex items-center justify-center">
+        <TextHoverEffect text="ADI" />
+      </div>
+      <div className="pt-32" id="projects">
+        <ProjectsSection />
+      </div>
+      <div className="pt-32" id="contact">
+        <Contact />
+      </div>
+      
+      <Footer />
+    </div>
   );
 }

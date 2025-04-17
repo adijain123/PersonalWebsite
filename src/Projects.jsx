@@ -11,9 +11,9 @@ export function ProjectsSection() {
       category: "Web + Quantitative Analysis",
       period: "May 2024 - July 2024",
       association: "IITISOC",
-      frontendLink: "https://github.com/username/algo-trading-frontend",
-      backendLink: "https://github.com/username/algo-trading-backend",
-      websiteLink: "https://algo-trading-platform.vercel.app/",
+      frontendLink: "https://github.com/adijain123/Algo-Trading",
+      backendLink: "https://github.com/adijain123/Quant-Flask-Backend",
+      websiteLink: "https://algo-trading-sigma.vercel.app/",
       imageSrc: "/algo.png", // Add your image path here
       imageAlt: "Algorithmic Trading Platform Dashboard",
       description: [
@@ -42,9 +42,9 @@ export function ProjectsSection() {
       category: "Machine Learning",
       period: "June 2024 – July 2024",
       association: "IITISOC",
-      frontendLink: "https://github.com/username/workout-monitoring-frontend",
-      backendLink: "https://github.com/username/workout-monitoring-backend",
-      websiteLink: "https://workout-monitor.vercel.app/",
+      frontendLink: "https://github.com/adijain123/Workout_Montioring_System",
+      backendLink: "https://github.com/adijain123/Backend_Workout_Monitoring",
+      websiteLink: "https://workout-montioring-system.vercel.app/",
       imageSrc: "/workout.png", // Add your image path here
       imageAlt: "Workout Monitoring System Interface",
       description: [
