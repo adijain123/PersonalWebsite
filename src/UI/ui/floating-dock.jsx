@@ -27,7 +27,7 @@ const FloatingDockMobile = ({
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-1.5">
+            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-0.5">
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
@@ -74,7 +74,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-12 items-end gap-2 rounded-2xl px-4 pb-2 md:flex",
+        "mx-auto hidden h-12 items-end gap-0.5 rounded-2xl px-4 pb-2 md:flex",
         className
       )}>
       {items.map((item) => (
@@ -96,10 +96,10 @@ function IconContainer({
   // Calculate base width based on text length
   useEffect(() => {
     if (textRef.current) {
-      // Get the actual text width plus some padding
+      // Get the actual text width plus less padding to reduce spacing
       const textWidth = textRef.current.offsetWidth;
-      // Set a minimum width of 70px and add 20px padding
-      setBaseWidth(Math.max(70, textWidth + 30));
+      // Reduced padding from 30 to 16px for tighter spacing
+      setBaseWidth(Math.max(60, textWidth + 16));
     }
   }, [title]);
 
@@ -108,9 +108,9 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  // Modified width transform that takes text length into account
+  // Modified width transform with smaller expansion factor
   let widthTransform = useTransform(distance, [-150, 0, 150], 
-    [baseWidth, baseWidth * 1.2, baseWidth]);
+    [baseWidth, baseWidth * 1.15, baseWidth]);
   let heightTransform = useTransform(distance, [-150, 0, 150], [30, 36, 30]);
 
   let width = useSpring(widthTransform, {
@@ -141,7 +141,7 @@ function IconContainer({
         <motion.div className="flex items-center justify-center">
           <motion.span 
             ref={textRef}
-            className="text-lg font-bold text-black dark:text-neutral-300 hover:text-white whitespace-nowrap"
+            className="text-lg font-bold text-black dark:text-neutral-300 dark:hover:text-white whitespace-nowrap"
             style={{ 
               scale: textScale2,
               transformOrigin: "center center"

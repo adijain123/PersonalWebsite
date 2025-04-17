@@ -7,6 +7,7 @@ import Education from "./Education";
 import { TextHoverEffect } from "./UI/ui/text-hover-effect";
 import { ExperienceSection } from "./Experience";
 import { Footer } from "./Footer";
+import {ProjectsSection} from './Projects'
 
 export default function App() {
   return (
@@ -30,6 +31,9 @@ export default function App() {
         <div className="h-[40rem] flex items-center justify-center">
       <TextHoverEffect text="ADI" />
     </div>
+    <div className="pt-32" id="projects">
+     <ProjectsSection/>
+     </div>
     <Footer/>
       </div>
   );
