@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./UI/ui/moving-border";
 
 const Education = () => {
   const educationData = [
@@ -35,8 +36,11 @@ const Education = () => {
   ];
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-black dark:to-zinc-950 p-6 md:p-12 transition-colors duration-500">
+    
       <div className="max-w-5xl mx-auto">
+      
         <div className="flex justify-center mb-12">
           {/* Optional main logo */}
           <div className="flex flex-col items-center">
@@ -47,11 +51,19 @@ const Education = () => {
           </div>
         </div>
         
+       
         <div className="space-y-10">
+       
           {educationData.map((item, index) => (
+           <div>
+           <Button 
+             className="w-full p-0 overflow-hidden shadow-xl"
+             borderRadius="1.5rem"
+             duration={3000}
+           > 
             <div 
               key={index} 
-              className="bg-white dark:bg-zinc-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="bg-white w-full dark:bg-zinc-950 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
             >
               <div className="flex flex-col md:flex-row">
                 {/* Left side with degree info and logo */}
@@ -133,10 +145,17 @@ const Education = () => {
                 </div>
               </div>
             </div>
+            </Button>
+            </div>
           ))}
+        
         </div>
+         
+        
       </div>
+      
     </div>
+   
   );
 };
 

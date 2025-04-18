@@ -22,7 +22,7 @@ export function BackgroundGradientDemo() {
             </h3>
             <div className="flex flex-wrap gap-1 mt-1">
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">C++</span>
-              <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Python*</span>
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Python</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Data Structures & Algorithms</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">JavaScript (core)</span>
             </div>
@@ -66,6 +66,7 @@ export function BackgroundGradientDemo() {
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">*Deep Learning</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">NumPy</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Pandas</span>
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Matplotlib</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">MediaPipe*</span>
             </div>
           </div>
@@ -104,6 +105,8 @@ export function BackgroundGradientDemo() {
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">CI/CD</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">*Linux</span>
               <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">*Bash</span>
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">AWS</span>
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-zinc-300 rounded-full text-xs">Microsoft Azure</span>
             </div>
           </div>
         </div>

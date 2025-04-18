@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="container mx-auto flex flex-wrap justify-between p-5 flex-col md:flex-row items-center">
           <div className="flex justify-between w-full md:w-auto items-center">
             <a className="flex title-font font-medium items-center text-gray-950 dark:text-white mb-0">
-              <span className="text-3xl font-extrabold">Adi Jain</span>
+              <span className="text-3xl font-extrabold"> <a href="#adi">Adi Jain</a></span>
             </a>
             <div className="flex items-center md:hidden">
               {/* Theme toggle button for mobile */}
