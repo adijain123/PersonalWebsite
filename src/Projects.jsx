@@ -3,6 +3,36 @@ import React from "react";
 import { BackgroundGradient } from "./UI/ui/background-gradient";
 
 export function ProjectsSection() {
+  // Function to highlight technical terms in text
+  const highlightTechTerms = (text) => {
+    // List of technical terms to highlight
+    const techTerms = [
+      "React", "Vite", "Tailwind CSS", "Acceternity UI", "Flask", "SQLAlchemy",
+      "Yahoo Finance", "Finnhub API", "Backtesting.py", "Plotly", 
+      "SMA", "Bollinger Bands", "MediaPipe Pose", "Framer Motion", "Chart.js",
+      "frontend", "backend", "authentication", "machine learning", "responsive",
+      "modular", "real-time", "API", "visualization", "backtesting",
+      "simulation", "algorithms", "data handling", "pose detection", "angle-based logic"
+    ];
+    
+    // Sort terms by length (descending) to ensure longer terms are matched first
+    const sortedTerms = [...techTerms].sort((a, b) => b.length - a.length);
+    
+    // Create a regular expression to match all terms
+    const regex = new RegExp(`\\b(${sortedTerms.join('|')})\\b`, 'gi');
+    
+    // Split the text by matches and create an array of parts
+    const parts = text.split(regex);
+    
+    // Return the highlighted text as JSX
+    return parts.map((part, index) => {
+      if (sortedTerms.some(term => part.toLowerCase() === term.toLowerCase())) {
+        return <span key={index} className="text-teal-600 dark:text-teal-400 font-medium">{part}</span>;
+      }
+      return part;
+    });
+  };
+
   // Projects data in JSON format for easy maintenance
   const projects = [
     {
@@ -17,9 +47,11 @@ export function ProjectsSection() {
       imageSrc: "/algo.png", // Add your image path here
       imageAlt: "Algorithmic Trading Platform Dashboard",
       description: [
-        "Developed an algorithmic trading platform for customizable trading strategy backtesting. Built a responsive frontend using React+Vite, TailwindCSS, and Acceternity UI.",
-        "Created a Flask backend with SQLAlchemy, integrated stock data from Yahoo Finance and Finnhub API, and utilized Plotly for visualization and Backtesting.py for strategy analysis.",
+        "Developed an algorithmic trading platform for customizable strategy backtesting. Built a responsive and modular frontend using React + Vite, styled with Tailwind CSS and Acceternity UI for a clean user experience.",
+        "Implemented a Flask backend with SQLAlchemy for secure data handling, integrated real-time and historical stock data from Yahoo Finance and Finnhub API, and used Backtesting.py for strategy simulation.",
+        "Visualized performance using Plotly to display stock price charts, equity curves over the backtesting period, and strategy outcomes. Included company overviews, summary metrics, and strategies like SMA, Bollinger Bands.",
       ],
+      
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +80,12 @@ export function ProjectsSection() {
       imageSrc: "/workout.png", // Add your image path here
       imageAlt: "Workout Monitoring System Interface",
       description: [
-        "Developed a real-time workout monitoring system using MediaPipe Pose for pose detection and angle-based logic to track exercise type, body position, and repetition count. Built the frontend with React + Vite for a fast and responsive UI, using libraries like Tailwind CSS, Framer Motion, and Chart.js for animations, styling, and progress visualization.",
-        "Used Flask backend for user authentication and to store exercise data and for providing feedback, enabling personalized performance tracking.",
+        "Developed a real-time workout monitoring system using MediaPipe Pose for pose detection and angle-based logic to track exercise type, body position, and repetition count.",
+        "Built a fast, responsive frontend with React + Vite, utilizing Tailwind CSS, Framer Motion, and Chart.js for animations, styling, and progress visualization.",
+        "Integrated a Flask backend for user authentication, exercise data storage, and real-time feedback generation, enabling personalized performance tracking and logging metrics like reps and posture accuracy."
       ],
+      
+      
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -173,9 +208,7 @@ export function ProjectsSection() {
                       <img
                         src={project.imageSrc}
                         alt={project.imageAlt || project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
@@ -187,7 +220,7 @@ export function ProjectsSection() {
                       <span className="mr-2 mt-1 text-gray-500 dark:text-gray-400">
                         •
                       </span>
-                      <span>{item}</span>
+                      <span>{highlightTechTerms(item)}</span>
                     </li>
                   ))}
                 </ul>

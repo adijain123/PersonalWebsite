@@ -3,6 +3,34 @@ import React from "react";
 import { BackgroundGradient } from "./UI/ui/background-gradient";
 
 export function ExperienceSection() {
+  // Function to highlight technical terms in text
+  const highlightTechTerms = (text) => {
+    // List of technical terms to highlight
+    const techTerms = [
+      "Node.js", "MongoDB", "EJS", "Microsoft Azure", "GoDaddy", 
+      "REST APIs", "CRUD", "UI", "React", "Vite", "Tailwind CSS", 
+      "React Router", "Acceternity UI", "components", "responsive", 
+      "accessibility", "frontend"
+    ];
+    
+    // Sort terms by length (descending) to ensure longer terms are matched first
+    const sortedTerms = [...techTerms].sort((a, b) => b.length - a.length);
+    
+    // Create a regular expression to match all terms
+    const regex = new RegExp(`\\b(${sortedTerms.join('|')})\\b`, 'gi');
+    
+    // Split the text by matches and create an array of parts
+    const parts = text.split(regex);
+    
+    // Return the highlighted text as JSX
+    return parts.map((part, index) => {
+      if (sortedTerms.some(term => part.toLowerCase() === term.toLowerCase())) {
+        return <span key={index} className="text-teal-600 dark:text-teal-400 font-medium">{part}</span>;
+      }
+      return part;
+    });
+  };
+
   // Experience data in JSON format for easy maintenance
   const experiences = [
     {
@@ -13,9 +41,11 @@ export function ExperienceSection() {
       githubLink: "https://github.com/siddhesh434/Prof-Sandeep-Chaudhary-v2",
       websiteLink: "https://sustainableconstructionlab.com/",
       description: [
-        "Built and deployed a dynamic official website under Prof. Sandeep Chaudhary using Node.js, MongoDB, and EJS templating, hosted on Microsoft Azure with domain setup via GoDaddy.",
-        "Implemented an admin panel with full CRUD operations using REST APIs for managing dynamic content and file storage. Showcased the lab's research, publications, and project updates in an organized, responsive UI.",
+        "Built a dynamic official website under Prof. Sandeep Chaudhary using Node.js, MongoDB, and EJS templating, hosted on Microsoft Azure with domain setup via GoDaddy.",
+        "Implemented an admin panel with full CRUD operations using REST APIs for managing dynamic content, with an option to store and organize files. Made it easy for the lab to post updates, publications, and research work.",
+        "Showcased the lab's research, publications, and project updates through a clean, responsive UI designed for accessibility and ease of navigation.",
       ],
+      
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +98,12 @@ export function ExperienceSection() {
       githubLink: "https://github.com/adijain123/ConcreateWebsite",
       websiteLink: "https://concreate-website.vercel.app/",
       description: [
-        "Designed and developed the website for Concreate Club, IIT Indore's Civil Engineering technical club, using React + Vite.",
-        "Implemented a clean, responsive interface with Acceternity UI, highlighting club activities, events, and achievements.",
+        "Developed the official website for Concreate Club, IIT Indore using React, Vite, and Tailwind CSS for a fast and responsive frontend.",
+        "Implemented seamless multi-page navigation using React Router and built reusable components to showcase events, team, and achievements.",
+        "Designed a clean UI with Acceternity UI, optimized for performance and accessibility across all devices.",
       ],
+      
+      
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +229,7 @@ export function ExperienceSection() {
                       <span className="mr-2 mt-1 text-gray-500 dark:text-gray-400">
                         •
                       </span>
-                      <span>{item}</span>
+                      <span>{highlightTechTerms(item)}</span>
                     </li>
                   ))}
                 </ul>
